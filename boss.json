@@ -29,6 +29,6 @@
 		"./src/TensorFlow/P4DTensorFlow.dproj"
 	],
 	"dependencies": {
-		"https://github.com/embarcadero/lightweight-python-wrappers": "^v0.0.1-alpha"
+		"https://github.com/andrewsbejatto/lightweight-python-wrappers": "^v0.0.1"
 	}
 }
