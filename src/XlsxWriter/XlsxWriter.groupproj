@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C50C7076-B079-42B6-9D44-96CC248CD386}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="P4DXlsxWriter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclP4DXlsxWriter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="P4DXlsxWriter">
+        <MSBuild Projects="P4DXlsxWriter.dproj"/>
+    </Target>
+    <Target Name="P4DXlsxWriter:Clean">
+        <MSBuild Projects="P4DXlsxWriter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="P4DXlsxWriter:Make">
+        <MSBuild Projects="P4DXlsxWriter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclP4DXlsxWriter">
+        <MSBuild Projects="dclP4DXlsxWriter.dproj"/>
+    </Target>
+    <Target Name="dclP4DXlsxWriter:Clean">
+        <MSBuild Projects="dclP4DXlsxWriter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclP4DXlsxWriter:Make">
+        <MSBuild Projects="dclP4DXlsxWriter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="P4DXlsxWriter;dclP4DXlsxWriter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="P4DXlsxWriter:Clean;dclP4DXlsxWriter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="P4DXlsxWriter:Make;dclP4DXlsxWriter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
