@@ -58,11 +58,11 @@ begin
   inherited;
   with AModel do begin
     PackageName := 'pandas';
-    //NumPy from PIP
+    //Pandas from PIP
     PackageManagers.Add(
       TPyPackageManagerKind.pip,
       TPyPackageManagerPip.Create('pandas'));
-    //NumPy from Conda
+    //Pandas from Conda
     PackageManagers.Add(
       TPyPackageManagerKind.conda,
       TPyPackageManagerConda.Create('pandas'));
