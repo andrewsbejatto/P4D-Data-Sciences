@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C50C7076-B079-42B6-9D44-96CC248CD386}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="P4DOpenPyXL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclP4DOpenPyXL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="P4DOpenPyXL">
+        <MSBuild Projects="P4DOpenPyXL.dproj"/>
+    </Target>
+    <Target Name="P4DOpenPyXL:Clean">
+        <MSBuild Projects="P4DOpenPyXL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="P4DOpenPyXL:Make">
+        <MSBuild Projects="P4DOpenPyXL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclP4DOpenPyXL">
+        <MSBuild Projects="dclP4DOpenPyXL.dproj"/>
+    </Target>
+    <Target Name="dclP4DOpenPyXL:Clean">
+        <MSBuild Projects="dclP4DOpenPyXL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclP4DOpenPyXL:Make">
+        <MSBuild Projects="dclP4DOpenPyXL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="P4DOpenPyXL;dclP4DOpenPyXL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="P4DOpenPyXL:Clean;dclP4DOpenPyXL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="P4DOpenPyXL:Make;dclP4DOpenPyXL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
