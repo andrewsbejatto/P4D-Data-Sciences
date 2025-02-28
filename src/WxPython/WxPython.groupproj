@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C50C7076-B079-42B6-9D44-96CC248CD386}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="P4DWxPython.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclP4DWxPython.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="P4DWxPython">
+        <MSBuild Projects="P4DWxPython.dproj"/>
+    </Target>
+    <Target Name="P4DWxPython:Clean">
+        <MSBuild Projects="P4DWxPython.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="P4DWxPython:Make">
+        <MSBuild Projects="P4DWxPython.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclP4DWxPython">
+        <MSBuild Projects="dclP4DWxPython.dproj"/>
+    </Target>
+    <Target Name="dclP4DWxPython:Clean">
+        <MSBuild Projects="dclP4DWxPython.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclP4DWxPython:Make">
+        <MSBuild Projects="dclP4DWxPython.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="P4DWxPython;dclP4DWxPython"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="P4DWxPython:Clean;dclP4DWxPython:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="P4DWxPython:Make;dclP4DWxPython:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
