@@ -36,7 +36,7 @@ uses
   PyPackage.Manager.Pip,
   PyPackage.Manager.Conda;
 
-{ TPandas }
+{ TOpenPyXL }
 
 function TOpenPyXL.AsVariant: variant;
 begin
@@ -58,11 +58,11 @@ begin
   inherited;
   with AModel do begin
     PackageName := 'openpyxl';
-    //NumPy from PIP
+    //OpenPyXL from PIP
     PackageManagers.Add(
       TPyPackageManagerKind.pip,
       TPyPackageManagerPip.Create('openpyxl'));
-    //NumPy from Conda
+    //OpenPyXL from Conda
     PackageManagers.Add(
       TPyPackageManagerKind.conda,
       TPyPackageManagerConda.Create('openpyxl'));

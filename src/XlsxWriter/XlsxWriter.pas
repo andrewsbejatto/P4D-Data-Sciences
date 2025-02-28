@@ -36,7 +36,7 @@ uses
   PyPackage.Manager.Pip,
   PyPackage.Manager.Conda;
 
-{ TPandas }
+{ TXlsxWriter }
 
 function TXlsxWriter.AsVariant: variant;
 begin
@@ -58,11 +58,11 @@ begin
   inherited;
   with AModel do begin
     PackageName := 'xlsxwriter';
-    //NumPy from PIP
+    //XlsxWriter from PIP
     PackageManagers.Add(
       TPyPackageManagerKind.pip,
       TPyPackageManagerPip.Create('xlsxwriter'));
-    //NumPy from Conda
+    //XlsxWriter from Conda
     PackageManagers.Add(
       TPyPackageManagerKind.conda,
       TPyPackageManagerConda.Create('xlsxwriter'));
